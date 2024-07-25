@@ -12,24 +12,31 @@
 }
 
 .cardImage {
-  /* width: 95%; */
   margin: 1rem;
-  /* image-orientation: ; */
   background-image: url("https://images.unsplash.com/photo-1506126613408-eca07ce68773?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wyMDUzMDJ8MHwxfHNlYXJjaHwyfHxZb2dhJTIwfGVufDF8fHx8MTcyMTc1MzMzNXww&ixlib=rb-4.0.3&q=80&w=1080");
-  /* background-clip: content-box; */
   background-clip: border-box;
   height: 17rem;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 5px;
-  /* width: 100%; */
 }
 
 body {
   margin: 0;
   padding: 0;
   font-family: Gelion, Helvetica, "Helvetica Neue", Arial;
+}
+
+.loader {
+  position: absolute;
+  z-index: 99;
+  height: 100%;
+  display: flex;
+  backdrop-filter: blur(5px);
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .subheading {
@@ -46,17 +53,13 @@ body {
   font-weight: 400;
   display: block;
   font-size: 14px;
-  /* font-weight: ; */
-  /* color: black; */
 }
 
 select {
   background-color: rgb(32, 49, 80);
   color: #ffffff;
-  /* padding: 1.5rem; */
   height: 2rem;
   width: 7rem;
-  /* font-size: large; */
   border-radius: 5px;
   border-color: transparent;
 }
@@ -67,8 +70,6 @@ input {
   height: 1.4rem;
   border-radius: 5px;
   border-color: transparent;
-  /* background-color: #ffffff; */
-  /* font-weight: 100; */
   padding: 0.2rem;
   width: 20rem;
 }
@@ -100,7 +101,6 @@ input {
   display: flex;
   column-gap: 2rem;
   column-count: 3;
-  /* width: 100vw; */
 }
 
 .retreatCard {
@@ -113,13 +113,10 @@ input {
 
 .retreatCard > img {
   width: 15rem;
-  /* max-width: 60%; */
   height: 12rem;
   border-radius: 15px;
   margin-left: 1rem;
   margin-top: 1rem;
-
-  /* background-position: ; */
 }
 
 .retreatCard > span:nth-child(n + 3) {
@@ -135,7 +132,6 @@ button {
   background-color: rgb(32, 49, 80);
   color: #ffffff;
   font-size: 14px;
-  /* width: 7rem; */
   padding: 0.5rem 1.2rem;
   border-radius: 5px;
   font-weight: 100;
