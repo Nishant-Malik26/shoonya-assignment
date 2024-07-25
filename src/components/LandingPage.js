@@ -180,7 +180,7 @@ const LandingPage = () => {
       {Array.isArray(filteredData) && (
         <div className="pagination">
           {page > 1 && [...filteredData]?.length > 3 && (
-            <button onClick={handlePrevious}>Previous {page}</button>
+            <button onClick={handlePrevious}>Previous</button>
           )}
           {page < [...filteredData]?.length / 3 && (
             <button onClick={handleNext}>Next</button>

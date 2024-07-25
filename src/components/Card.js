@@ -1,7 +1,7 @@
 import React from "react";
 
 const Card = ({ image, title, date, location, price, description }) => {
-    // COnvert Unix time to human time
+    // Convert Unix time to human time
   let dateN = new Date(date * 1000);
   return (
     <div className="retreatCard">
