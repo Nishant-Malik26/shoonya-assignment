@@ -73,6 +73,7 @@ const LandingPage = () => {
       .then((res) => {
         setFilteredData(res);
         setIsLoading(false);
+        setPage(1);
       })
       .catch((err) => {
         console.log(err);
@@ -92,6 +93,7 @@ const LandingPage = () => {
             dateFilter.substring(0, 4)
         )
       );
+      setPage(1);
     }
   }, [dateFilter]);
   // type select handler
@@ -160,21 +162,31 @@ const LandingPage = () => {
       </div>
 
       <div className="retreatCardContainer">
-        {!Array.isArray(filteredData) && <div>{filteredData}</div>}
+        {!Array.isArray(filteredData) && (
+          <div
+            style={{
+              display: "block",
+              height: "23rem",
+            }}
+          >
+            {filteredData}
+          </div>
+        )}
         {Array.isArray(filteredData) &&
           filteredData
             .slice((page - 1) * 3, (page - 1) * 3 + 3)
             .map((retreat) => <Card key={retreat?.id} {...retreat} />)}
       </div>
-      <div className="pagination">
-        {Array.isArray(filteredData) &&
-          (page > 1 || filteredData.length > 3) && (
-            <button onClick={handlePrevious}>Previous</button>
+      {Array.isArray(filteredData) && (
+        <div className="pagination">
+          {page > 1 && [...filteredData]?.length > 3 && (
+            <button onClick={handlePrevious}>Previous {page}</button>
           )}
-        {Array.isArray(filteredData) && page < filteredData.length / 3 && (
-          <button onClick={handleNext}>Next</button>
-        )}
-      </div>
+          {page < [...filteredData]?.length / 3 && (
+            <button onClick={handleNext}>Next</button>
+          )}
+        </div>
+      )}
       <div className="footer">
         © 2024 Wellness Retreats. All rights reserved.
       </div>

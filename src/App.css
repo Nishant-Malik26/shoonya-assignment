@@ -188,6 +188,7 @@ button {
   .retreatCardContainer {
     display: inline-block;
     column-count: 1;
+    min-height: 23rem;
   }
 
   .retreatCard {
