@@ -2,11 +2,13 @@
 
 run the following commands
 
--git clone https://github.com/Nishant-Malik26/shoonya-assignment.git
+- git clone https://github.com/Nishant-Malik26/shoonya-assignment.git
 
--npm install
+-  cd shoonya-assignment 
 
--npm start
+- npm install
+
+- npm start
 
 Project will now be running on your local
 
